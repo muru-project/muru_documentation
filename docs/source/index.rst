@@ -2,7 +2,6 @@ MURU
 ====
 
 .. toctree::
-    :hidden:
     Tutorials
 
 Welcome! Beta version hehe
@@ -10,7 +9,7 @@ Welcome! Beta version hehe
 Getting started
 ---------------
 
-* :doc:`Installation <Tutorials>`
+* :doc:`Tutorials <Tutorials>`
 
   - Learn about the simulator and how to use it!
 
