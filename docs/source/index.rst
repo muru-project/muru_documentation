@@ -2,7 +2,6 @@ MURU
 ====
 
 .. toctree::
-    :hidden:
     Tutorials
 
 Welcome! Beta version hehe
