@@ -1,4 +1,6 @@
 Tutorials
 =========
 
+.. toctree::
+  Line Follower
 
