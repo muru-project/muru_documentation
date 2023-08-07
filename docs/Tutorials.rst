@@ -1,5 +1,5 @@
-Usage
-=====
+Tutorials
+=========
 
 .. _installation:
 
