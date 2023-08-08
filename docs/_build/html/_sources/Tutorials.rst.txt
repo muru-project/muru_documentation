@@ -54,4 +54,20 @@ node and click on the ``Scale`` attribute and set x, y and z attributes to 0,015
 Creating a very simple Line Follower Robot
 -------------------------------------------
 
-Aqui va
+Prerequisites
+~~~~~~~~~~~~~
+
+The following tutorial considers that you know how to build a basic Robot from scratch in Webots. If you don't know how to do it 
+you should check the `4-Wheeled Robot Tutorial`_.
+
+.. _4-Wheeled Robot Tutorial: https://cyberbotics.com/doc/guide/tutorial-6-4-wheels-robot
+
+
+2-Wheeled Robot
+~~~~~~~~~~~~~~
+
+Simulating QTR-8RC sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PID Controller
+~~~~~~~~~~~~~~
