@@ -1,4 +1,4 @@
-MURU Documentation
+MURU Simulator Documentation
 ==================
 
 Welcome!
