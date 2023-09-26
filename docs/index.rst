@@ -7,3 +7,4 @@ Contents
 
    Home <self>
    Tutorials
+   Examples
