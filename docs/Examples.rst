@@ -7,18 +7,32 @@ basic_robot Package
 -------------------
 
 This Package contains a basic simulation and simple examples!
+Pre-requisites: sudo apt install xterm
 
 Robot Teleoperation
 ~~~~~~~~~~~~~~~~~~~
 
-Move basic_robot with your keyboard! Firs, run the simulation:
+Move basic_robot with your keyboard! Run the simulation:
 
 .. code-block:: console
     
-        $ ros2 launch basic_robot robot_launch.py
+        $ ros2 launch basic_robot basic_robot_launch.py 
 
-In another terminal, run the teleop_twist_keyboard node:
+You should see Webots window and a terminal window. In the terminal window, press the keys to move the robot:
+
+.. image:: /_static/images/examples/teleop.png
+
+
+Robot ROS2 PID Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example of a PID controller for basic_robot implemented usign ROS2. Run the simulation:
 
 .. code-block:: console
+    
+        $ ros2 launch basic_robot follow_the_line_launch.py 
+ 
 
-        $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
+You should see Webots window and the robot should start following the line inmidiatly:
+
+.. image:: /_static/images/examples/line_follower.png
