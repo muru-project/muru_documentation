@@ -36,12 +36,12 @@ requests==2.28.1
     # via sphinx
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==5.0.2
-    # via
-    #   -r docs/requirements.in
-    #   sphinx-rtd-theme
-sphinx-rtd-theme>=1.1.0
-    # via -r docs/requirements.in
+sphinx==6.2.1
+sphinx-rtd-theme==1.2.2
+pillow==5.4.1
+mock==1.0.1
+commonmark==0.9.1
+recommonmark==0.5.0
 sphinxcontrib-applehelp==1.0.2
     # via sphinx
 sphinxcontrib-devhelp==1.0.2
