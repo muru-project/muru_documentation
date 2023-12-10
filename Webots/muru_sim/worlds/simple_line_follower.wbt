@@ -1,0 +1,329 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material2 "wheel"
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.3221370689782417 0.06154667201471984 0.9446902751452563 2.7898193233726993
+  position 2.2064999753187187 -0.6505089801036904 1.3309127609783935
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 1.5
+  floorAppearance PBRAppearance {
+    roughness 1
+    metalness 0
+    occlusionMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/parquetry/dark_strip_parquetry_occlusion.jpg"
+      ]
+    }
+  }
+}
+Transform {
+  rotation 1 0 0 1.5708
+  scale 0.013 0.013 0.013
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [
+          "../protos/Track0.obj"
+        ]
+      }
+    }
+  ]
+}
+Robot {
+  translation -0.5 -0.3 0.05
+  children [
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.1075 0.105 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+          maxVelocity 15
+        }
+      ]
+      endPoint Solid {
+        translation -0.10757689487676864 0.10504861350786887 -2.449427410292981e-05
+        rotation 0.9999999876822815 0.00011052989827214319 0.0001114386743496005 1.5720633531145853
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0.239216 0.219608 0.27451
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.045
+            }
+          }
+        ]
+        name "solid_wheel1"
+        contactMaterial "wheel"
+        boundingObject USE WHEEL
+        physics DEF WHEEL_PH Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.1075 -0.105 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+          maxVelocity 15
+        }
+      ]
+      endPoint Solid {
+        translation -0.10756605003975922 -0.10504685171768174 4.039894010789553e-05
+        rotation 0.9999980321069165 -0.0014006768728017554 -0.0014049507437778421 1.5704202379862675
+        children [
+          USE WHEEL
+        ]
+        name "solid_wheel2"
+        contactMaterial "wheel"
+        boundingObject USE WHEEL
+        physics USE WHEEL_PH
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        anchor 0.0875 0 -0.0425
+      }
+      jointParameters2 JointParameters {
+      }
+      jointParameters3 JointParameters {
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 0.08756650246935635 -3.043259899783346e-06 -0.04241511432963168
+        rotation -0.0401093066123794 -0.7067099235536876 0.7063655763652523 6.283185307179586
+        children [
+          DEF BALL_WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0.239216 0.219608 0.27451
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.0025
+            }
+          }
+        ]
+        contactMaterial "wheel"
+        boundingObject USE BALL_WHEEL
+        physics Physics {
+          density -1
+          mass 0.028
+        }
+      }
+    }
+    DEF ROBOT_BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0.603922 0.6 0.588235
+        metalness 0
+      }
+      geometry Box {
+        size 0.175 0.17 0.08
+      }
+    }
+    DistanceSensor {
+      translation 0.036 0.039 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_0"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 0.027 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_1"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 0.015 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_2"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 0.004 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_3"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 -0.004 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_4"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 -0.015 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_5"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 -0.027 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_6"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.036 -0.039 -0.015
+      rotation 0 1 0 1.5708
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.752941 0.109804 0.156863
+                metalness 0
+              }
+              geometry Box {
+                size 0.004 0.004 0.004
+              }
+            }
+          ]
+        }
+      ]
+      name "IR_7"
+      type "infra-red"
+    }
+  ]
+  boundingObject USE ROBOT_BODY
+  physics Physics {
+    density -1
+    mass 1.26
+    centerOfMass [
+      0.0205 0 0.04
+    ]
+  }
+  controller "<none>"
+}
